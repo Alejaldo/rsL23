@@ -25,12 +25,13 @@ post '/visit' do
 	@date = params[:date]
 	@time = params[:time]
 	@fcker = params[:fcker]
+	@color = params[:color]
 
 	@title = 'Good!'
-	@message = "#{@username} (#{@phone}) you have just booked #{@date} at #{@time}. Our #{@fcker} will fck your ass!"
+	@message = "#{@username} (#{@phone}) you have just booked #{@date} at #{@time}. Our #{@fcker} will fck your ass with #{@color} color of nation!"
 	
 	guestlist = File.open './public/guestlist.txt', 'a'
-	guestlist.write "Guest #{@username} (phone: #{@phone}) has made appointment on #{@date} at #{@time} with Mr. #{@fcker}\n"
+	guestlist.write "Guest #{@username} (phone: #{@phone}) has made appointment on #{@date} at #{@time} with Mr. #{@fcker} and #{@color} color \n"
 	guestlist.close
 
 	erb :contacts
